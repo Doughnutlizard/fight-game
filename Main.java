@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +24,13 @@ public class Main {
     }
 
     public static void fight() {}
-    public static void viewChars() {}
+    public static void viewChars() {
+        Scanner fileRead = new Scanner(new File("characters.txt"));
+        while(fileRead.hasNextLine()) {
+            System.out.println(fileRead.nextLine());
+        }
+        fileRead.close();
+    }
     public static void createNewChar() {}
     public static void saveChar() {}
 }
