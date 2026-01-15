@@ -2,11 +2,11 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException{
         startGame();
     }
 
-    public static void startGame() {
+    public static void startGame() throws FileNotFoundException{
         Scanner userIn = new Scanner (System.in);
         System.out.println("What would you like to do?");
         System.out.println("[1]-Fight [2]-View Characters [3]-Create New [4]-Save Creation");
@@ -24,7 +24,7 @@ public class Main {
     }
 
     public static void fight() {}
-    public static void viewChars() {
+    public static void viewChars() throws FileNotFoundException{
         Scanner fileRead = new Scanner(new File("characters.txt"));
         while(fileRead.hasNextLine()) {
             System.out.println(fileRead.nextLine());
